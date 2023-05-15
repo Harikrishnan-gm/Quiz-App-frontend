@@ -1,0 +1,53 @@
+body{
+    background-color: black;
+}
+.container-fluid{
+   opacity: 80%;
+}
+.col-4{
+    padding: 0%;
+    width: 100%;
+    margin-left: 10%;
+    justify-content: center;
+    
+}
+#midle{
+    margin: 0;
+    padding: 0;
+    
+    border-radius: 5px;
+    box-shadow: 1px 2px 3px 4px rgba(12,12,12,0.2);
+}
+.row{
+    margin: 0;
+    padding: 0;
+}
+#answers{
+    color: rgb(24, 51, 88);
+}
+/* a:visited{
+    color: rgb(237, 240, 227);
+} */
+a:active{
+    background-color: rgb(178, 181, 159);
+}
+.container{
+    height: 90vh;
+}
+.col-8-lg{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row{
+    height: 100%;
+}
+img{
+    width: 10%;
+    height: 10%;
+}
+#answerCheck:hover{
+    color: black;
+    background-color: black;
+}

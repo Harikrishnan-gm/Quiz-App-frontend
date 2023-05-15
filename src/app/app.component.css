@@ -1,0 +1,19 @@
+@media (max-width:896px){
+    body{
+        height: 90vh;
+        width: 100%;
+       
+    }
+}
+html{
+    width: 80vw;
+    
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    width: 90vw;
+    
+    background-color: rgb(250, 249, 249);
+}

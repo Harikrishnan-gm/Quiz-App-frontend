@@ -1,0 +1,81 @@
+
+<!-- main-->
+<div  class="container-fluid d-flex  align-items-center justify-content-center" style="margin-top: 10%;margin-bottom: 0%;">
+    <div class="d-flex justify-content-center ">
+        <div class="text-center">
+            <h1 style="font-size: 8em;opacity: 80%;" class="mainh text-uppercase text-dark"><b>Quiz App</b></h1>
+            <h2 style="font-family: 'Kanit', sans-serif;" class="text-dark-50 ">A space for test your knowledge</h2>
+            <a  class="btn text-info" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                <i class="fa-solid fa-arrow-right-to-bracket"></i> <span>Get Started</span> </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- model for get question -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title  text-success" id="exampleModalLabel"><b>Please Select Down </b>
+            <i class="fa-regular fa-circle-down" style="color: #385c3b;"></i></h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="CategoryForm" (ngSubmit)="EnterQuestion()">
+                <!-- category div -->
+                <div class="mb-2">
+                    <!-- <input name="category" formControlName="category" value="1" type="text" name="" id=""> -->
+                    <label class="mb-3">Category</label> <br><select required="" type="number" name="category" formControlName="category" class="form-select" aria-label="Default select example">
+                        <option selected value="9">General knowledge</option>
+                        <option  value="10" >Entertainment:Books</option>
+                        <option value="11">Entertainment:Film</option>
+                        <option value="13">Entertainment:Music</option>
+                        <option value="14">Entertainment:Television</option>
+                        <option value="15">Entertainment:VvideoGame</option>
+                        <option value="16">Entertainment:Board Game</option>
+                        <option value="17">Science And Nature</option>
+                        <option value="18">Science:Computers</option>
+                        <option value="19">Science:Mathematics</option>
+                        <option value="20">Mythology</option>
+                        <option value="21">Sports</option>
+                        <option value="22">Geography</option>
+                        <option value="23">History</option>
+                        <option value="24">Politics</option>
+                        <option value="25">Arts</option>
+                        <option value="26">celebrities</option>
+                        <option value="27">Animals</option>
+                        <option value="28">Vehicles</option>
+    
+                      </select>
+                </div>
+                <!-- mode div -->
+                <div>
+                   
+                    <label class="mb-3">Mode</label><select required="" type="number" name="mode" formControlName="mode" class="form-select" aria-label="Default select example">
+                        <option selected value="easy">Easy</option>
+                        <option  value="medium" >Medium</option>
+                        <option value="hard">Hard</option>
+                      </select>
+                </div>
+              
+            
+            <div class="modal-footer justify-content-center">
+              <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+              <button  type="submit" class="proceed btn " data-bs-dismiss="modal">
+                
+                <div  *ngIf="EnterButtonclickedStatus" style="size-adjust: 30%;" class="spinner-border" role="status" >
+                  <span  class="sr-only">Loading...</span>
+                </div>
+             Take Me to Quiz <i class="fa-brands fa-usps" style="color: #909b8c;"></i></button>
+            </div>
+        </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+
+
+

@@ -1,0 +1,13 @@
+img{
+    width: 100%;
+    height: 70vh;
+}
+.container-fluid{
+    padding-top: 10%;
+}
+form{
+    padding: 2%;
+}
+.btn-login-reg{
+    background-color: rgba(13, 13, 116, 0.527);
+}

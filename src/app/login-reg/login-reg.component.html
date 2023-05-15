@@ -1,0 +1,70 @@
+<div *ngIf="RegisterSuccessmsg" class="container d-flex text-center justify-content-center align-items-center" style="height: 100vh;width: 100%;">
+    <h1 class="text-primary">
+        <img width="100px" src="https://i0.wp.com/cormullion.github.io/assets/images/slackmojif/slackanimation.gif?w=625&ssl=1" alt="Spinner"> Your data is registering..Please wait
+    </h1>
+</div>
+<div>
+    <div   class="container-fluid mt-2">
+        <div class="row ms-2 mt-2">
+            
+            <h2 style="font-family: 'Nunito', sans-serif;line-height: 35px; color: rgb(3, 61, 18);">Signup/login to save your score and competitive to Noobs </h2>
+            <div class="col-lg-5 p-5 mt-5">
+                <form *ngIf="!RegButtonClicked" [formGroup]="registerForm" class="form-control p-2" (ngSubmit)="register()">
+                    <h3 class="text-primary">Register</h3>
+                    <div class="mt-2 mb-2">
+                        <input name="username" formControlName="username" class="form-control mb-2" placeholder="Name" type="text" id="">
+                        <!-- username error message -->
+                        <div *ngIf="this.registerForm.get('username')?.errors&&this.registerForm.get('username')?.touched" class="text-danger mb-3">Invalid userName</div>
+                    </div>
+                    
+                    <div>
+                        <input  name="email" formControlName="email" class="form-control mb-2" placeholder="Email" type="email" id=""></div>
+                        <!-- email error -->
+                        <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" class="text-danger mb-3  ">Invalid mail id </div>
+                    <div>
+                        <input  name="password" formControlName="password" class="form-control mb-2" placeholder="password" type="password" id=""></div>
+                        <!--password error -->
+                        <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched" class="text-danger mb-3"> Invalid passord</div>
+                        <!-- register error message -->
+                        <div class="mt-2 mb-2 text-danger fw-bolder">{{errMsg}}  </div>
+                        <div>
+                        <input  class="btn btn-login-reg text-light" type="submit" value="Register"> already a user <button class="btn text-warning" (click)="loginButton()"  href="">Log In here</button>
+                    </div>
+                    
+                </form>
+
+                <!-- login -->
+                
+                
+                <form *ngIf="loginButtonClicked" [formGroup]="registerForm" class="form-control p-2" (ngSubmit)="Login()">
+                    <h3 class="text-warning">Login</h3>
+                   
+                    
+                    <div>
+                        <input  name="email" formControlName="email" class="form-control mb-2" placeholder="Email" type="email" id=""></div>
+                        <!-- email error -->
+                        <div *ngIf="this.registerForm.get('email')?.errors&&this.registerForm.get('email')?.touched" class="text-danger mb-3  ">Invalid mail id </div>
+                    <div>
+                        <input  name="password" formControlName="password" class="form-control mb-2" placeholder="password" type="password" id=""></div>
+                        <!--password error -->
+                        <div *ngIf="this.registerForm.get('password')?.errors&&this.registerForm.get('password')?.touched" class="text-danger mb-3"> Invalid passord</div>
+                        <!-- register error message -->
+                        <div class="mt-2 mb-2 text-danger fw-bolder">{{errMsg}}  </div>
+                        <div class="text-secondery">
+                        <input  class="btn btn-login-reg text-light" type="submit"  value="login"> Not a user <button (click)="registerButton()" class="btn text-primary"  href="">Register here</button>
+                    </div>
+                    <div *ngIf="loginSuccess"  class="d-flex text-success mt-2 p-2">
+                       <img style="width: 50px;height: 50px;" src="https://dltqhkoxgn1gx.cloudfront.net/img/posts/6-vue-loader-animation-libraries-to-reduce-your-bounce-rate-2.png" alt=""> {{LoginSuccessmsg}}
+                    </div>
+                </form>
+
+
+
+
+            </div>
+            <div class="col-lg-7">
+                <img width="70%" height="60%" src="https://apptraitsolutions.com/wp-content/uploads/2021/01/C88IZyEo7g-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div  style="margin-top: 1%;" class="container-fluid p-2">
+    <div  class="row justify-content-center mt-3 p-2">
+        <div class="col-md-2">
+          
+        </div>
+        <div id="midle" class="col-md-8 justify-content-center p-2">
+           
+            <div class="d-flex justify-content-around mt-2 p-2 mb-2"><h4 class="card-title text-success">Answers <i class="fa-solid fa-person-circle-question" style="color: #515152;"></i> </h4> <span class="text-primary"></span> </div>
+            
+            <div *ngFor="let question of questions;let i=index;" class="card p-2 mb-3">
+                <div  class="card-body p-2">
+                  
+                  <p class="card-text">{{i+1}} .{{question.question}}</p>
+                  <div class="d-flex justify-content-start">
+                    
+                    <!-- <a  id="answers" (click)="valueRead(question.question,question.correct_answer)"class="answers btn ms-2">
+                      <i class="fa-regular fa-circle-dot" style="color: #1b1c1d;"></i> 
+                       <span>{{clickedAnswer}}</span> -->
+                      <!-- {{question.correct_answer}}</a> --> 
+                    
+                     
+                        <div style="background-color: #e4efef;"  class=" ms-2 d-flex justify-content-around" >
+                          
+                          {{question.correct_answer}}
+                        </div>
+                          
+                        
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end p-2">
+                <!-- <div (click)="submit()" style="background-color: #070606;" class="btn ms-2 text-light">Next Attempt <i class="fa-solid fa-circle-check" style="color: #ffffff;"></i></div> -->
+              </div>
+           
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<!-- <div *ngIf="resultStatus" class="container">
+  <div class="row">
+    <div class="col-2-lg"></div>
+    <div  class="col-8-lg p-2">
+      
+      <div  class="text-success justify-content-end">
+        <div class="d-flex justify-content-center mb-2">
+          <h1 class="text-success"><b>Your Score: {{count}}/10</b> </h1>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+          <img src="https://cdn.dribbble.com/users/1787505/screenshots/7300251/media/a351d9e0236c03a539181b95faced9e0.gif" alt="">
+        </div>
+        <div class="d-flex justify-content-center">
+          <a  routerLink="/loginReg" id="answerCheck" class="btn text-secondary ms-2">
+            <i class="fa-solid fa-user-plus" style="color: #880216;"></i> Signup to
+          <br>Show Answers</a></div>
+      </div>
+    </div>
+    <div class="col-2-lg"></div>
+  </div>
+</div> -->
