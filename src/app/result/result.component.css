@@ -1,4 +1,16 @@
 .container-fluid{
-    background: rgb(121,136,133);
-background: linear-gradient(90deg, rgba(121,136,133,1) 1%, rgba(150,230,214,1) 36%, rgba(157,85,85,1) 84%, rgba(170,154,132,1) 100%, rgba(202,208,201,1) 100%);
+    padding-top: 3%;
+     height: 100vh;
+    width: 100vw;
+    background: rgba(53, 94, 86, 0.516);
+}
+body{
+    width: 90vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    overflow: hidden;
+
+}
+.d-flex{
+    
 }

@@ -1,22 +1,19 @@
-<div  style="margin-top: 1%;" class="container-fluid p-2">
+<div   class="container-fluid">
     <div  class="row justify-content-center mt-3 p-2">
         <div class="col-md-2">
-          
+            <button class="btn bg-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <i class="fa-solid fa-address-card" style="color: #0f6d26;"></i>
+                  My Profile</button>
         </div>
         <div id="midle" class="col-md-8 justify-content-center p-2">
            
-            <div class="d-flex justify-content-around mt-2 p-2 mb-2"><h4 class="card-title text-success">Answers <i class="fa-solid fa-person-circle-question" style="color: #515152;"></i> </h4> <span class="text-primary"></span> </div>
+            <div class="d-flex justify-content-around "><h4 class="card-title text-success">Answers  <i class="fa-solid fa-person-circle-question" style="color: #515152;"></i> </h4> <span class="text-primary"></span> </div>
             
             <div *ngFor="let question of questions;let i=index;" class="card p-2 mb-3">
                 <div  class="card-body p-2">
                   
                   <p class="card-text">{{i+1}} .{{question.question}}</p>
                   <div class="d-flex justify-content-start">
-                    
-                    <!-- <a  id="answers" (click)="valueRead(question.question,question.correct_answer)"class="answers btn ms-2">
-                      <i class="fa-regular fa-circle-dot" style="color: #1b1c1d;"></i> 
-                       <span>{{clickedAnswer}}</span> -->
-                      <!-- {{question.correct_answer}}</a> --> 
                     
                      
                         <div style="background-color: #e4efef;"  class=" ms-2 d-flex justify-content-around" >
@@ -58,3 +55,21 @@
     <div class="col-2-lg"></div>
   </div>
 </div> -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">{{userDetails.name}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -30,15 +30,18 @@ register(){
       let uname=this.registerForm.value.username
       let email=this.registerForm.value.email
       let pword=this.registerForm.value.password
-      const body={uname,email,pword}
+      let score=localStorage.getItem("count")
+      const body={uname,email,pword,score}
       
-      this.api.register(uname,email,pword)
+      this.api.register(uname,email,pword,score)
       .subscribe((result:any)=>{
         
-        this.RegisterSuccessmsg=result.message
+       
         setTimeout(()=>{
-          this.router.navigateByUrl('result')
           
+          this.loginButtonClicked=true
+          this.RegButtonClicked=true
+          this.registerForm.reset()
         },2000)
       },((error:any)=>{
         
@@ -59,34 +62,41 @@ register(){
     }
 }
 loginButton(){
-  this.loginButtonClicked=true
-  this.RegButtonClicked=true
+  this.loginButtonClicked=false
+  this.RegButtonClicked=false
+  this.registerForm.reset()
 
 
 }
 registerButton(){
   
-  this.RegButtonClicked=false
-  this.loginButtonClicked=false
+  this.RegButtonClicked=true
+  this.loginButtonClicked=true
+  this.registerForm.reset()
 }
 
 Login(){
-
-     
-     
+  
       let email=this.registerForm.value.email
       let pword=this.registerForm.value.password
+      let score=localStorage.getItem("count")
+      // let scoreN=JSON.parse(score)
+      console.log(score);
+      
       if(email&&pword){ 
-      const body={email,pword}
+      const body={email,pword,score}
       // api call
-      this.api.login(email,pword)
+      this.api.login(email,pword,score)
       .subscribe((result:any)=>{
-        
+        // console.log("hi",result);
+
+        // store to behaviour subject for data to another component
+        this.api.resultArray.next({result})
         this.LoginSuccessmsg="Login Success"
         console.log(this.LoginSuccessmsg);
         this.loginSuccess=true
         setTimeout(()=>{
-          this.router.navigateByUrl('result')
+          this.router.navigateByUrl('/result')
           
         },2000)
       },((error:any)=>{

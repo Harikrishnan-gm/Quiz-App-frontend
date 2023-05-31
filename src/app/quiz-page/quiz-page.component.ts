@@ -28,6 +28,7 @@ export class QuizPageComponent implements OnInit {
         
         // save questions  to Behavior for other component
         let questiontoResult=result.results
+        console.log(this.questions[0].category);
         
         this.api.questions.next({questiontoResult})
         // console.log(this.questions[1].category);

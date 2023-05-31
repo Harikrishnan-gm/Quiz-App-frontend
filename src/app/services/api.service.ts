@@ -6,6 +6,7 @@ import{BehaviorSubject} from 'rxjs'
 })
 export class ApiService {
   searchTerm=new BehaviorSubject({})
+  resultArray=new BehaviorSubject({})
   questions=new BehaviorSubject({})
   Base_Url='http://localhost:3000'
   constructor(private http:HttpClient)  {
@@ -17,13 +18,17 @@ export class ApiService {
                        
   }
 
-  register(name:any,email:any,password:any){
-    const body={name,email,password}
+  register(name:any,email:any,password:any,score:any){
+    const body={name,email,password,score}
     return this.http.post(`${this.Base_Url}/users`,body)
   }
 
-  login(email:any,password:any){
-    const body={email,password}
+
+  login(email:any,password:any,score:any){
+
+  // convert data to number (local storrage data)
+    score=JSON.parse(score)
+    const body={email,password,score}
     return this.http.post(`${this.Base_Url}/login`,body)
   }
   Topper(){
